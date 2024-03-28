@@ -63,6 +63,14 @@ Visit the [**old**](https://classic.curve.fi/pools/?see=0x0000000000000000000000
 
 ## **Formula**
 
-The boost mechanism calculates the **earning weight** by taking the smaller of two values. The first value is the amount of liquidity provided, for example, $10,000. This figure represents the maximum earning weight.
+The boost mechanism calculates the **earning weight** of the liquidity you provide to the pool.  If you have enough voting weight (veCRV) you will be able to boost the earning weight of the liquidity you provide by up to 2.5x.  The formula for calculating your boosted earning weight is:
 
-![](https://2254922201-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-MFA0rQI3SzfbVFgp3Ic%2F-MJCjXQHNjiZe5hYKApB%2F-MJCjcm7RW7EuOXJC46E%2Fimage.png?alt=media&token=aca31750-4ae9-4ffd-991c-46cdccf2b374)
+$$b^*_u = \min\left \{0.4 b_u + 0.6 S \frac{w_i}{W}, \quad b_u\right \}$$
+
+Where:
+
+* $b^*_u$ is the boosted balance of user $u$ (1x-2.5x of $b_u$)
+* $b_u$ is the actual balance of user $u$
+* $S$ is the total liquidity supplied by all users to the pool
+* $w_i$ is the user's vote weight (veCRV)
+* $W$ is the total vote weight of all users (total veCRV)
